@@ -1,0 +1,1085 @@
+@import "variables";
+
+html, body {
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 16px;
+	color: @txt;
+	background-color: @white;
+}
+
+a, button, input[type="submit"] {
+	.transition(all, 0.4s, ease);
+}
+
+.allwrap {
+	.transition(all, 0.4s, ease);
+}
+.shifted {
+	overflow: hidden;
+}
+.page-title {
+	text-align: center;
+	margin: auto;
+	padding: 40px 0;
+}
+.navbar {
+	border-radius: 0;
+	margin: 0;
+	border: 0;
+}
+
+.main-nav {
+	//margin-bottom: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: @beesha;	
+
+	.nav {
+		li {
+			a{
+				text-transform: uppercase;
+				background-color: @beesha;
+				color: @txt;
+				font-weight: 600;
+				&:hover, &:focus {
+					color: @brown;
+				}
+			}
+		}
+
+		&.lang {
+			li {
+				display: inline-block;
+				a {
+					padding: 10px 15px;
+				}
+				.active {
+					background-color: @brown;
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+.navbar-nav {
+	>li {
+			padding-right: 15px;
+			padding-left: 15px;
+			>a {
+				padding-right: 0;
+				padding-left: 0;
+				&:after {
+					.transition(all, 0.4s, ease);
+					content: "";
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 40px;
+					width: 0%;
+					height: 2px;
+					background-color: @brown;
+				}
+				&:hover, &:focus, &.active {
+					&:after {
+						width: 100%;
+					}
+				}
+			}
+		}
+}
+
+
+.navbar-header {
+	display: inline-block;
+	vertical-align: middle;
+}
+.navbar-brand {
+	height: auto;
+	color: @darkest;
+	font-size: 36px;
+	&:hover, &:focus {
+		color: black;
+	}
+}
+.phones {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 14px;
+	padding-left: 15px;
+	p {
+		margin: auto;
+	}
+}
+.navbar-toggle {
+	margin: 0;
+	margin-top: 8px;
+	.icon-bar {
+		height: 3px;
+		width: 25px;
+		background-color: @txt;
+	}
+}
+
+.offmenu {
+	.transition(all, 0.5s, ease);
+	z-index: 9999;
+	position: fixed;
+	position:-ms-device-fixed;
+	background: @white;
+	right: 0;
+	top: 0;
+	left: 90px;
+	bottom: 0;
+	padding: 30px;
+	.transform(translateX(100%));
+	.close {
+		.opacity(1);
+		float: none;
+		position: relative;
+	    height: 40px;
+	    background-color: white;
+	    display: block;
+	    .fa {
+	    	font-size: 24px;
+	    	color: @txt;
+	    	&:hover, &:focus {
+	    		color: @brown;
+	    	}
+	    }
+	    &:hover, &:focus {
+	    	color: @brown;
+	    }
+	}
+	ul {
+		list-style: none;
+		margin: 0 0 20px 0;
+		padding: 0;
+		li {
+			a {
+				position: relative;
+				display: block;
+				padding: 10px 0;
+				font-size: 16px;
+				text-transform: uppercase;
+				color: @txt;
+				font-weight: bold;
+				&:hover, &:focus {
+					color: @brown;
+					text-decoration: none;
+				}
+				
+			}
+		}
+		&.mainnav {
+			li {
+				a {
+					&:after {
+					.transition(all, 0.4s, ease);
+					content: "";
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 40px;
+					width: 0%;
+					height: 2px;
+					background-color: @brown;
+				}
+				&:hover, &:focus, &.active {
+					&:after {
+						width: 100%;
+						}
+					}
+				}
+			}
+		}
+		&.lang {
+			li {
+				display: inline-block;
+				a {
+					padding: 15px;
+				}
+				a.active {
+					background-color: @brown;
+					color: @white;
+				}
+			}
+		}
+	}
+	&.open {
+		.transform(translateX(0));
+	}
+	.navi {
+		max-height: 100%;
+		overflow: auto;
+	}
+}
+
+// pogām sadalīt, kas ir globāli vajadzīgs visām pogām un tad dažādu krāsu pogām atsevišķu klasi klāt
+.btn {
+	vertical-align: middle;
+	color: white;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 0;
+	padding: 15px;
+	&:hover, &:focus {
+		box-shadow: 5px 5px 0 0 fade(@brown, 50%);
+	}
+}
+
+.btn-dark {
+	background-color: @darkest;
+	&:hover, &:focus {
+		color: white;
+		background-color: lighten(@darkest, 10%);
+	}
+}
+
+.btn-brown {
+	background-color: @brown;
+	&:hover, &:focus {
+		color: white;
+		background-color: lighten(@brown, 10%);
+	}
+}
+
+
+.nomargin {
+	margin: 0;
+}
+
+.section {
+	//globāla klase piemēram kuru vari visiem lielajiem gabaliem izmantot,
+	//praktiski tikai lai būtu visiem vienādas atstarpes augšā un apakšā
+	padding: 50px 0;
+	h2 {
+		margin: auto;
+		padding: 0 0 40px 0;
+	}
+}
+
+.intro_about {
+	background: url('../img/Header.jpg') no-repeat center;
+	background-size: cover;
+	text-align: center;
+	padding: 50px 0;
+	h1 {
+		color: @darkest;
+		font-weight: bold;
+		font-size: 70px;
+	}
+	h2 {
+		color: @white;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	h3 {
+		color: @darkest;
+	}
+	.btn {
+	margin: 30px auto;
+	}
+}
+
+.another_section {
+	background-color: @darkest;
+	text-align: center;
+	padding: 40px 0;
+	.item {
+		min-height: 170px;
+		// sis lai visi kluci butu vienadi un nepeldetu
+		span {
+			display: block;
+			text-align: center;
+			color: @brown;
+			font-weight: bold;
+			font-size: 40px;
+		}
+
+	}
+	 
+	p {
+		color: @white;
+		font-size: 20px;
+	}
+}
+
+.garantet {
+	background-color: @gaisa;
+	text-align: center;
+	padding-bottom: 40px;
+		h2 {
+		padding-top: 40px;
+		color:  @darkest;
+		font-size: 25px;
+		text-align: center;
+	}
+		.item {
+		position: relative;
+		display: block;
+		background-size: cover;
+		height: 150px;
+		width: 100%;
+		background: center no-repeat;
+	}
+	p{
+		font-size: 20px;
+	}
+}
+
+.garantijas {
+	background-color: @brown;
+	color: @white;
+	padding-bottom: 40px;
+	padding-top: 40px;
+	h2 {
+		text-align: center;
+	}
+	.sadala {
+		height: 300px;
+	}
+	.number {
+		font-weight: 600;
+		font-size: 150px;
+		color: #d1c492;
+		z-index: 1;
+	}
+	.content {
+		text-align: left;
+		z-index: 100;
+		position: relative;
+		top: -100px;
+	}
+}
+
+
+.pardosana {
+	background-color: @darkest;
+	padding-bottom: 40px;
+	padding-top: 40px;
+	h2 {
+		text-align: center;
+		color: @brown;
+		margin-bottom: 30px;
+	}
+	h3 {
+		color: @white;
+		text-align: center;
+	}
+	.numbers {
+		margin-top: 40px;
+		color: @white;
+		text-align: center;
+		font-size: 20px;
+		line-height: 20px;
+		font-weight: 700;
+		height: 40px;
+		width: 40px;
+		background-color: @brown;
+		border-radius: 40px;
+		padding: 9px 0 6px;
+    	margin-bottom: 12px;
+	}
+	.sadala {
+		p {
+			color: @white;
+		}
+	}
+	.block {
+		border: 3px solid #afa376;
+		padding: 37px 40px;
+		p {
+			font-size: 24px;
+			color: @brown;
+			line-height: 30px;
+		}
+	}
+}
+
+.palidziba {
+	background-color: @white;
+	padding-bottom: 40px;
+	padding-top: 40px;
+	h2 {
+	line-height: 43px;
+    margin-bottom: 50px;
+    text-align: center;
+	}
+	.img {
+		width: 100%;
+		height: 570px;
+		border: 1px solid #e8e9e9;
+		border-bottom: 4px solid #cfd0d1;
+		float: left;
+		margin-right: 15px;
+		margin-bottom: 30px;
+
+		.item {
+			position: relative;
+			display: block;
+			background-size: cover;
+			height: 300px;
+			width: 100%;
+			background: center no-repeat;
+			img {
+				position: absolute;
+			    top: 88px;
+			    left: 50%;
+			    margin-left: -80px;
+			    font-weight: 700;
+			    font-size: 41px;
+			    line-height: 41px;
+			    height: 161px;
+			    width: 161px;
+			    text-align: center;
+			    border-radius: 74px;
+			}
+		}
+		.content {
+			padding: 0 40px;
+			h3 {
+				line-height: 40px;
+				font-size: 30px;
+				margin-bottom: 4px;
+			}
+			p {
+				font-size: 24px;
+				line-height: 30px;
+			}
+		}
+	}
+}
+
+
+.vertetajs {
+	background: url('../img/background.jpg') no-repeat center;
+	background-size: cover;
+	padding-top: 100px;
+	// padding-bottom: 40px;
+	.item {
+		position: relative;
+		display: block;
+		background-size: cover;
+		height: 500px;
+		width: 100%;
+		background: center no-repeat;
+	}
+	h2 {
+		text-align: left;
+	    color: #afa376;
+	    line-height: 43px;
+	    margin-top: 30px;
+	    margin-bottom: 17px;
+	}
+	h3 {
+	    line-height: 30px;
+	    color: @darkest;
+	    margin-bottom: 20px;
+	}
+	.form-control {
+		margin-bottom: 20px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border: none;
+	}
+	.btn {
+		margin: 30px auto;
+	}
+}
+
+
+.klienti {
+	background-color: @gaisa;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	h2 {
+	color:  @darkest;
+	font-size: 25px;
+	text-align: center;
+	}
+	.item {
+		position: relative;
+		height: 150px;
+		text-align: center;
+		img {
+			max-width: 100%;
+			max-height: 100px;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			right: 0;
+			margin: auto;
+			.transform(translateY(-50%));
+		}
+	}
+}
+
+.mediji {
+	background-color: @white;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	h2 {
+	color:  @darkest;
+	font-size: 25px;
+	text-align: center;
+	padding-bottom: 30px;
+	}
+	p{ 
+		color: @brown;
+		height: 100px;
+	}
+	a {
+		color: @brown;
+		text-decoration: underline;
+	}
+	// .item {
+	// 	position: relative;
+	// 	display: block;
+	// 	background-size: cover;
+	// 	height: 250px;
+	// 	width: 250px;
+	// 	background: center no-repeat;
+	// }
+}
+
+.piedavajumi {
+	background-color: #f7f6f1;
+	min-height: 400px;
+		h2 {
+		padding-top: 20px;
+		color: @brown;
+		text-transform: uppercase;
+		font-size: 25px;
+		text-align: center;
+		font-weight: bold;
+	}
+.btn {
+
+	border-radius: 0;
+	margin: 10px auto 10px 0;
+	width: 100%;
+	background-color: @brown;
+	margin-bottom: 30px;
+	}
+}
+
+.pakalpojumi {
+	background-color: @white;
+	//min-height: 400px;
+	h2 {
+		padding-top: 20px;
+		color:  @darkest;
+		font-size: 25px;
+		text-align: center;
+		padding-bottom: 20px;
+	}
+	.item {
+		position: relative;
+		display: block;
+		background-size: cover;
+		height: 150px;
+		width: 100%;
+		background: center no-repeat;
+	}
+	p {
+		color: @darkest;
+		text-align: center;
+		min-height: 100px;
+
+	}
+}
+
+
+.konsultacija {
+	background-color: @darkest;
+	padding-top: 30px;
+	padding-bottom: 40px;
+	h2 {
+		color: @brown;
+		padding-bottom: 15px;
+	}
+	h4 {
+		color: @white;
+	}
+		.form-control {
+		margin-bottom: 20px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border: none;
+	}
+	.btn {
+	margin: 30px auto;
+	}
+
+}
+
+
+footer {
+	position: relative;
+	background-color: lighten(@darkest, 5%);
+	padding: 30px 0;
+	color: @white;
+	font-size: 14px;
+	.logo {
+		color: @brown;
+		font-size: 36px;
+		display: inline-block;
+		margin-right: 15px;
+	}
+	.phones {
+		margin-bottom: 30px;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		font-size: 14px;
+		li {
+			display: inline-block;
+			a{
+				text-transform: uppercase;
+				color: @white;	
+				text-decoration: none;
+				padding: 5px 10px;
+				&:hover, &:focus {
+					color: @brown;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.filters {
+	padding: 20px;
+	background-color: @beesha;
+	margin-bottom: 30px;
+}
+
+.form-control {
+	border-radius: 0;
+	border-color: @txt;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+select.form-control {
+	-webkit-appearance: none;
+	appearance: none;
+	background-image: url('../img/select.jpg');
+	background-position: 95% center;
+	background-repeat: no-repeat;
+}
+.header {
+	padding: 30px 0;
+		h1,h2,h3 {
+		text-transform: uppercase;
+		font-weight: bold;
+		margin: auto;
+	}
+	a {
+		color: @txt;
+		
+		&:hover, &:focus {
+			color: @brown;
+			text-decoration: none;
+		}
+	}
+	.fa {
+		font-size: 45px;
+		line-height: 1;
+	}
+}
+
+.sellitem {
+	margin-bottom: 30px;
+	.price {
+		color: @white;
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 3;
+	}
+	.item-img {
+		position: relative;
+		display: block;
+		background-size: cover;
+		height: 250px;
+		width: 100%;
+		margin-bottom: 10px;
+			.over {
+			.transition (all, 0.4s, ease);
+				.opacity(0);
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			background: fade(black, 60%);
+			span {
+				margin: auto;
+				position: absolute;
+				color: black;
+				top:50%;
+				width: 100%;
+				padding: 20px;
+				text-align: center;
+				margin: auto;
+				.transform(translateY(-50%));
+				.fa {
+					font-size: 40px;
+					color: white;
+				}				
+			}
+		}
+		&:hover, &:focus {
+			.over {
+				.opacity(1);
+			}
+		}
+	}
+	h5 {
+		color: @brown;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	table {
+		margin-top: 10px;
+		line-height: 1.5;
+		th {
+			color: @brown;
+			padding-right: 30px;
+			font-weight: normal;
+		}
+		td {
+			color: darken(@white, 10%);
+			font-weight: normal;
+		}
+	}
+	.details {
+		padding: 15px;
+		background-color: @darkest;
+		cursor: pointer;
+	}
+	.carousel {
+		height: 230px;
+		overflow: hidden;
+		.item {
+			height: 230px;
+			img {
+				min-width: 100%;
+				min-height: 100%;
+			}
+		}
+		
+	}
+}
+
+.carousel {
+	.carousel-control {
+		background-image: none;
+		top: 50%;
+		.transform(translateY(-50%));
+		width: 30px;
+		height: 30px;
+		text-shadow: none;
+
+		.fa {
+			font-size: 30px;
+		}
+		&:hover, &:focus {
+			background-color: fade(@white, 30%);
+		}
+	}
+}
+
+
+.pagination{
+	border: none;
+	li {
+		a{ 
+			border: none;
+			font-weight: bold;
+			color: @darkest;
+			&:hover, &:focus {
+				background-color: @brown;
+				color: @white;
+			}
+		}
+		.active {
+			color: @white;
+			background-color: @brown;
+		}
+		.fa {
+			border: none;
+			font-weight: bold;
+			color: @darkest;
+			&:hover, &:focus {
+				background-color: @brown;
+				color: white;
+			}
+		}
+	}
+}
+
+
+.attels {
+	.item {
+		position: relative;
+		display: block;
+		background-size: cover;
+		height: 250px;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+}
+
+.tabula {
+		table {
+		margin-top: 10px;
+		line-height: 1.5;
+		th {
+			color: @darkest;
+			padding-right: 40px;
+			font-weight: bold;
+		}
+		td {
+			font-weight: normal;		
+		}
+		.cena {
+			color: @brown;
+			font-weight: bold;
+		}
+	}
+}
+
+.contacts {
+	background-color: #f7f6f1;
+	.item {
+		position: relative;
+		display: block;
+		background-size: cover;
+		height: 50px;
+		width: 50px;
+		background: center no-repeat;
+	}
+
+	.form-control {
+		margin-bottom: 20px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border: none;
+	}
+	textarea {
+		height: 130px;
+	}
+	form {
+		margin-bottom: 30px;
+	}
+}
+
+.inl-b {
+	>.i-b {
+		display: inline-block;
+		vertical-align: top;
+		line-height: 1;
+		font-size: 20px;
+		+ .i-b {
+			margin-left: 10px;
+		}
+	}
+}
+
+#googleMap {
+	margin-bottom: 30px;
+}
+
+.open-item {
+	h1 {
+		font-weight: bold;
+		margin: auto;
+		padding-bottom: 40px;
+	}
+	padding-bottom: 30px;
+	.carousel {
+		.item {
+			background-color: darken(@white, 5%);
+			height: 300px;
+			text-align: center;
+			img {
+				max-width: 100%;
+				max-height: 100%;
+				margin: auto;
+				position: absolute;
+				top: 50%;
+				.transform(translateY(-50%));
+				left: 0;
+				right: 0;
+				margin: auto;
+			}
+		}
+		.carousel-control {
+			color: @txt;
+		}
+	}
+}
+
+.carousel-indicators.hide-bullets {
+	position: relative;
+	width: 100%;
+	left: auto;
+	margin: auto;
+	text-align: left;
+	bottom: auto;
+	li {
+		list-style-type: none;
+		display: inline-block;
+		padding: 10px 3px;
+		width: 96px;
+		height: auto;
+		border: 0;
+		border-radius: 0;
+	.thumbnail {
+		padding: 0;
+		border-radius: 0;
+		height: 60px;
+		display: block;
+		overflow: hidden;
+		margin: 0;
+		border: 0;
+		img {
+			width: auto;
+			height: auto;
+			min-height: 100%;
+			min-width: 100%;
+			}
+		}
+	}
+}
+
+
+
+.modal {
+	
+	margin: 30px auto auto auto;
+	
+	.modal-content {
+		width: 100%;
+		max-width: 560px;
+		max-height: 90%;
+		overflow: auto;
+	    margin: auto;
+	    padding: 20px;
+	    border-radius: 0;
+	}
+	.close {
+	    color: @brown;
+	    float: right;
+	    font-size: 28px;
+	}
+	#ipasums {
+		text-align: center;
+		color: @darkest;
+		font-weight: bold;
+	}
+	h4 {
+		padding-top: 20px;
+		text-transform: uppercase;
+		color: @brown;
+	}
+	hr {
+		border: 1px solid #afa376;
+	}
+	a {
+		text-decoration: none;
+		color: @darkest;
+		font-weight: bold;
+		.fa {
+			padding-top: 20px;
+			padding-bottom: 20px;
+			margin-right: 15px;
+		}
+		span {
+			padding-top: 20px;
+			padding-bottom: 20px;
+
+		}
+	}
+	.btn {
+	border-radius: 0;
+	margin: 10px auto 10px 0;
+	width: 100%;
+	background-color: @brown;
+	margin-bottom: 30px;
+	margin-top: 20px;
+	}
+}
+.modal-backdrop {
+	background-color: @brown;
+}
+.backtoTop {
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: fade(@white, 50%);
+	color: @brown;
+	text-align: center;
+	font-size: 30px;
+	line-height: 1.2;
+	&:hover, &:focus {
+		background-color: fade(white, 90%);
+		color: @brown;
+	}
+}
+@media (min-width: 768px) {
+	.open-item {
+		padding-top: 87px;
+	}
+	footer {
+		ul {
+			display: inline-block;
+		}
+		.col-md-4 {
+			text-align: right;
+		}
+	}
+	.another_section {
+		.item + .item {
+			border-left: 1px solid #45464b;
+		}
+	}
+	.pardosana {
+		.sadala {
+			height: 170px;
+		}
+	}
+	.contacts {
+		padding-bottom: 60px;
+	}
+	.right-side {
+		padding-top: 87px;
+	}
+}
+@media (max-width: 767px){
+	footer {
+		.phones {
+			margin-top: 20px;
+		}
+		.footernav {
+			li {
+				display: block;
+			}
+		}
+	}
+	.btn {
+    	white-space: normal;
+	}
+
+}
+@media (max-width: 450px) {
+	.navbar-brand {
+		font-size: 24px;
+	}
+}
